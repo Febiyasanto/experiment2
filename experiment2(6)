@@ -1,0 +1,39 @@
+package URK24CS1263;
+
+
+import java.util.Scanner;
+
+public class array2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Take input numbers
+        System.out.print("Enter how many numbers: ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.print("Enter the numbers: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Number to be searched
+        System.out.print("Enter the number to be searched: ");
+        int search = sc.nextInt();
+
+        // Count occurrences
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == search) {
+                count++;
+            }
+        }
+
+        // Display output
+        if (count > 0) {
+            System.out.println("Number Found " + count + " times");
+        } else {
+            System.out.println("The number not available");
+        }
+    }
+}

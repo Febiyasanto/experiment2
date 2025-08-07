@@ -4,38 +4,35 @@ import java.util.Scanner;
 
 public class smallestnumber {
 
-	public static void main(String[] args) {
-	  Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of data: ");
+        int array_size = scanner.nextInt();
+        int[] numbers = new int[array_size];
+        
+        System.out.print("Enter the numbers: ");
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        System.out.print("X = ");
+        int x = scanner.nextInt();
 
-	  System.out.print("enter a  data:"+"");
-	  int n = sc.nextInt();
+        int count = 0;
+        String result = "";
 
-	  System.out.println("enter a X value:");
-	  int x = sc.nextInt();
-	  int cnt =0;
-
-	  int []num=new int[n];
-	  int []res = new int[n];
-	  System.out.println("enter a number:");
-	  for(int i =0;i<num.length;i++) {
-		  num[i]=sc.nextInt();
-
-		  if(num[i]<x)
-		  {
-			  cnt++;
-		     res[i]=num[i];
-		  }  
-	  }
-	  System.out.println("count"+cnt);
-
-	  for(int j=0;j<res.length; j++)
-	  {
-		  if(res[j]!=0) {
-			  System.out.println("number are"+res[j]); 
-		  }
-	  }
-	}
-
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < x) {
+                count++;
+                result += numbers[i] + ",";
+            }
+        }
+        System.out.println("Count = " + count);
+        if (count > 0) {
+            result = result.substring(0, result.length() - 1);
+            System.out.println("Numbers are = " + result);
+        } else {
+            System.out.println("No numbers smaller than " + x);
+        }
+        scanner.close();
+    }
 }
-
-
